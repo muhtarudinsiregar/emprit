@@ -19,61 +19,85 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        nav a {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        nav li>ul {
+            background: #2d3748;
+            height: 0;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        nav li>ul a {
+            line-height: 40px;
+        }
+
+        nav li:hover>ul {
+            height: auto;
+        }
+    </style>
 </head>
 
 <body class="h-full bg-gray-300">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <nav class="flex items-center justify-between bg-gray-800 text-gray-500 px-4 h-12">
+            <div class="flex items-center h-full">
+                <div>{{ config('app.name', 'Laravel') }} 😎</div>
+                <ul class="ml-4 flex items-stretch h-full">
+                    <li>
+                        <a href="http://" class="block h-full flex items-center px-4">Register</a>
+                        <ul class="absolute bg-gray-800">
+                            <li><a href="http://" class="py-2 px-4">Lorem</a></li>
+                            <li><a href="http://" class="py-2 px-4">Lorem</a></li>
+                            <li><a href="http://" class="py-2 px-4">Lorem</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center">
+                <!-- Authentication Links -->
+                @guest
+                <div>
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </div>
+                @if (Route::has('register'))
+                <div class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </div>
+                @endif
+                @else
+                <div>
+                    {{ Auth::user()->name }}
+                </div>
+                <ul class="flex items-stretch h-full mr-4">
+                    <li>
+                        <img src="https://i.pravatar.cc/300" alt="" srcset=""
+                            class="h-8 w-8 rounded-full border-2 ml-8">
+                        <ul class="absolute bg-gray-800">
+                            <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     style="display: none;">
                                     @csrf
                                 </form>
-                            </div>
-                        </li>
-                        @endguest
-                    </ul>
-                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                @endguest
             </div>
         </nav>
 
