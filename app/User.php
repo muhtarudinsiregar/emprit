@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'provider', 'provider_id'
     ];
 
     /**
@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function mappingTwitterData($twitterUser)
+    {
+        // $this->email = $twitterUser->getEmail();
+        // $this->name = $twitterUser->getName();
+        // $this->provider_id = $twitterUser->getId();
+        // $this->save();
+        return;
+    }
 }

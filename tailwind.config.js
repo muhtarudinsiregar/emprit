@@ -1,7 +1,11 @@
 module.exports = {
-  theme: {
-    extend: {}
-  },
-  variants: {},
-  plugins: []
+    theme: {
+        extend: {
+            colors: {
+                twitter: '#1da1f2',
+            },
+        }
+    },
+    variants: {},
+    plugins: []
 }

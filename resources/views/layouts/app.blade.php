@@ -19,91 +19,33 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        nav a {
-            display: flex;
-            height: 100%;
-            align-items: center;
-            padding: 0 15px;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        nav li>ul {
-            background: #2d3748;
-            height: 0;
-            position: absolute;
-            overflow: hidden;
-        }
-
-        nav li>ul a {
-            line-height: 40px;
-        }
-
-        nav li:hover>ul {
-            height: auto;
-        }
-    </style>
 </head>
 
-<body class="h-full bg-gray-300">
+<body class="antialiased font-sans">
     <div id="app">
-        <nav class="flex items-center justify-between bg-gray-800 text-gray-500 px-4 h-12">
-            <div class="flex items-center h-full">
-                <div>{{ config('app.name', 'Laravel') }} 😎</div>
-                <ul class="ml-4 flex items-stretch h-full">
-                    <li>
-                        <a href="http://" class="block h-full flex items-center px-4">Register</a>
-                        <ul class="absolute bg-gray-800">
-                            <li><a href="http://" class="py-2 px-4">Lorem</a></li>
-                            <li><a href="http://" class="py-2 px-4">Lorem</a></li>
-                            <li><a href="http://" class="py-2 px-4">Lorem</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex items-center">
-                <!-- Authentication Links -->
-                @guest
-                <div>
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+        <nav class="bg-transparent py-4 px-4 lg:px-16 xl:py-8 fixed top-0 z-50 w-full md:px-8 xl:px-24 xxl:px-40">
+            <div class="flex items-center justify-between flex-wrap relative">
+                <div class="w-1/2 md:w-1/4">
+                    <h3 class="font-bold text-white text-2xl">EmpritApp</h3>
                 </div>
-                @if (Route::has('register'))
-                <div class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                <div class="w-1/2 text-right sm:hidden"></div>
+                <div class="w-full navigation-menu hidden md:flex md:w-3/4 relative">
+                    <div
+                        class="flex flex-col md:flex-row pt-8 pb-2 md:pt-0 md:pb-0 md:ml-auto md:items-center relative">
+                        <a class="font-bold text-white ml-4 mr-4 hover:underline" href="">Twitter</a>
+                        <a class="font-bold text-white ml-4 mr-4 hover:underline" href="">Github</a>
+                        <a class="font-bold text-white ml-4 mr-4 hover:underline" href="#about">About</a>
+                        <a class="font-bold text-white ml-4 mr-4 hover:underline" href="">Patreon</a>
+                        <a class="font-bold text-white ml-4 mr-4 hover:underline">
+                            <button
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded uppercase">sign
+                                in</button>
+                        </a>
+                    </div>
                 </div>
-                @endif
-                @else
-                <div>
-                    {{ Auth::user()->name }}
-                </div>
-                <ul class="flex items-stretch h-full mr-4">
-                    <li>
-                        <img src="https://i.pravatar.cc/300" alt="" srcset=""
-                            class="h-8 w-8 rounded-full border-2 ml-8">
-                        <ul class="absolute bg-gray-800">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                @endguest
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+        @yield('content')
     </div>
 </body>
 
