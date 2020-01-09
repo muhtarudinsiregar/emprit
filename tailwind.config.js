@@ -3,6 +3,7 @@ module.exports = {
         extend: {
             colors: {
                 twitter: '#1da1f2',
+                custom: '#DBF8FF',
             },
         }
     },
