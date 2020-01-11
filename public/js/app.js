@@ -44947,6 +44947,17 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+var myNav = document.getElementById("nav");
+
+window.onscroll = function () {
+  "use strict";
+
+  if (document.documentElement.scrollTop >= 280) {
+    myNav.classList.add("bg-gradient");
+  } else {
+    myNav.classList.remove("bg-gradient");
+  }
+};
 
 /***/ }),
 

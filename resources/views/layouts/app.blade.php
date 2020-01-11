@@ -23,7 +23,8 @@
 
 <body class="antialiased font-sans">
     <div id="app">
-        <nav class="bg-transparent py-4 px-4 lg:px-16 xl:py-8 fixed top-0 z-50 w-full md:px-8 xl:px-24 xxl:px-40">
+        <nav class="bg-transparent py-4 px-4 lg:px-16 xl:py-8 fixed top-0 z-50 w-full md:px-8 xl:px-24 xxl:px-40"
+            id="nav">
             <div class="flex items-center justify-between flex-wrap relative">
                 <div class="w-1/2 md:w-1/4">
                     <h3 class="font-bold text-white text-2xl">EmpritApp</h3>
