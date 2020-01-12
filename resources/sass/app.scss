@@ -2,11 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+$fa-font-path: "../webfonts";
+
 // Font Awesome
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
 
 .bg-gradient {
     background-image: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98)
