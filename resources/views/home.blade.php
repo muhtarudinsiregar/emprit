@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@includeIf('layouts.sidebar')
+@include('layouts.sidebar')
 
 
 @endsection

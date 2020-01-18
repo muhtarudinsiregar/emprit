@@ -1,4 +1,4 @@
-<div id="main" class="pt-16">
+<div id="main" class="">
     <!-- Sidebar -->
     <div class="bg-gray-800 relative h-full min-h-screen w-64 text-twitter">
         <div class="xl:py-2">
